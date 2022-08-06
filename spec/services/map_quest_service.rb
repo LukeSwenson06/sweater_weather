@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "MapQuestService" do
   it "can recieve a call and parse response" do
+    state = "Denver,CO"
+
     response = MapQuestService.get_location_details(state)
     expect(response).to be_a(Hash)
 
