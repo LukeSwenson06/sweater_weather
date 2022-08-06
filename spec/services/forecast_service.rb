@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "ForecastService" do
   it "can recieve a call and parse response" do
+    lat = 39.7392
+    lng = -104.9903
+
     response = ForecastService.get_weather_data(lat, lng)
     expect(response).to be_a Hash
 
@@ -10,7 +13,7 @@ RSpec.describe "ForecastService" do
     expect(current).to include :sunrise, :sunset, :feels_like, :humidity, :weather
     expect(current[:sunrise]).to be_a(Integer)
     expect(current[:sunset]).to be_a(Integer)
-    expect(current[:feels_like]).to be_a(Integer)
+    expect(current[:feels_like]).to be_a(Float)
     expect(current[:humidity]).to be_a(Integer)
     expect(current[:weather]).to be_a(Array)
 
@@ -19,7 +22,7 @@ RSpec.describe "ForecastService" do
     expect(weather[:description]).to be_a(String)
     expect(weather[:icon]).to be_a(String)
 
-    daily = response[:daily]
+    daily = response[:daily].first
     expect(daily).to include :dt, :sunrise, :sunset, :temp, :weather
 
     temp = daily[:temp]
@@ -28,8 +31,8 @@ RSpec.describe "ForecastService" do
 
     daily_weather = daily[:weather].first
     expect(daily_weather).to include :description, :icon
-    expect(daily_weather[:description]).to eq(String)
-    expect(daily_weather[:icon]).to eq(String)
+    expect(daily_weather[:description]).to be_a(String)
+    expect(daily_weather[:icon]).to be_a(String)
 
     hourly = response[:hourly]
     expect(hourly).to be_a(Array)
