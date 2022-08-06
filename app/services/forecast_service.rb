@@ -4,6 +4,7 @@ class ForecastService < BaseService
       faraday.params['lat'] = lat
       faraday.params['lon'] = lng
       faraday.params['appid'] = ENV['open_weather_api']
+      faraday.params['units'] = 'imperial'
     end
     json_parse(response)
   end
