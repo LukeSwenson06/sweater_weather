@@ -1,5 +1,6 @@
 class MapQuestFacade
   def self.lat_long(state)
-    MapQuestService.get_location_details(state)
+    json = MapQuestService.get_location_details(state)
+    MapQuest.new(json)
   end
 end
