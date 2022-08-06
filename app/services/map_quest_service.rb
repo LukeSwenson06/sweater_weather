@@ -4,6 +4,6 @@ class MapQuestService < BaseService
       faraday.params['key'] = ENV['map_quest_api']
       faraday.params['location'] = state
     end
-    JSON.parse(response.body, symbolize_names: true)
+    json_parse(response)
   end
 end
