@@ -9,6 +9,7 @@ class CurrentForecast
               :uvi,
               :conditions,
               :icon
+
   def initialize(data)
     @datetime = Time.at(data[:dt])
     @sunrise = Time.at(data[:sunrise])
