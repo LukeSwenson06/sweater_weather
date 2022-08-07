@@ -12,6 +12,5 @@ class ForecastFacade
     end
 
     { current_weather: current_weather, daily_weather: daily_weather, hourly_weather: hourly_weather}
-    binding.pry
   end
 end
