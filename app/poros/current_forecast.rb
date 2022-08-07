@@ -7,7 +7,7 @@ class CurrentForecast
               :humidity,
               :visibility,
               :uvi,
-              :description,
+              :conditions,
               :icon
   def initialize(data)
     @datetime = Time.at(data[:dt])
@@ -18,7 +18,7 @@ class CurrentForecast
     @humidity = data[:humidity]
     @visibility = data[:visibility]
     @uvi = data[:uvi]
-    @description = data[:weather].first[:description]
+    @conditions = data[:weather].first[:description]
     @icon = data[:weather].first[:icon]
   end
 end
