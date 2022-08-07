@@ -15,7 +15,7 @@ class CurrentForecast
     @sunset = Time.at(data[:sunset])
     @temperature = data[:temp]
     @feels_like = data[:feels_like]
-    @humidity = data[:humidity]
+    @humidity = data[:humidity].to_f
     @visibility = data[:visibility]
     @uvi = data[:uvi]
     @conditions = data[:weather].first[:description]
