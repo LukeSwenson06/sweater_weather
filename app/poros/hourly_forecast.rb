@@ -1,7 +1,7 @@
 class HourlyForecast
-  attr_reader :date_time
-              :temperature
-              :description
+  attr_reader :datetime,
+              :temperature,
+              :description,
               :icon
   def initialize(data)
     @datetime = Time.at(data[:dt]).strftime('%X'),
