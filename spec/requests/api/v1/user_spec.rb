@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "user endpoints" do
   it "creates a user" do
-    login= {
+    login = {
       'email': 'therealemail@email.com',
       'password': '12345',
       'password_confirmation': '12345'
@@ -21,7 +21,7 @@ RSpec.describe "user endpoints" do
 
   it "sends an error message if email address already exists" do
     user = User.create(email: 'therealemail@email.com', password: '12345', password_confirmation: '12345')
-    login= {
+    login = {
       'email': 'therealemail@email.com',
       'password': 'dragon',
       'password_confirmation': 'dragon'
@@ -36,7 +36,7 @@ RSpec.describe "user endpoints" do
   end
 
   it "sends an error message if password does not match password confirmation" do
-    login= {
+    login = {
       'email': 'therealemail@email.com',
       'password': 'dragon',
       'password_confirmation': 'lizard'
@@ -64,7 +64,7 @@ RSpec.describe "user endpoints" do
   end
 
   it "sends an error message if password is blank" do
-    login= {
+    login = {
       'email': 'therealemail@email.com',
       'password': '',
       'password_confirmation': ''
