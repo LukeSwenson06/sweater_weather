@@ -15,7 +15,7 @@ RSpec.describe CurrentForecast do
     expect(forecast.humidity).to eq(41)
     expect(forecast.uvi).to eq(9.31)
     expect(forecast.visibility).to eq(10000)
-    expect(forecast.description).to eq("scattered clouds")
+    expect(forecast.conditions).to eq("scattered clouds")
     expect(forecast.icon).to eq("03d")
 
   end
