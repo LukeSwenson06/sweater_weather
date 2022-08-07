@@ -12,7 +12,7 @@ RSpec.describe CurrentForecast do
     expect(forecast.sunset).to eq("2022-08-06 20:08:02 -0600")
     expect(forecast.temperature).to eq(85.33)
     expect(forecast.feels_like).to eq(84.88)
-    expect(forecast.humidity).to eq(41)
+    expect(forecast.humidity).to eq(41.00)
     expect(forecast.uvi).to eq(9.31)
     expect(forecast.visibility).to eq(10000)
     expect(forecast.conditions).to eq("scattered clouds")
