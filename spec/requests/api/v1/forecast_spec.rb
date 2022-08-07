@@ -92,4 +92,11 @@ describe 'forecast endpoint' do
       expect(hourly).to_not have_key :wind_gust
     end
   end
+
+  it "responses with a status code 400 and empty array if no location was passed in" do
+    get '/api/v1/forecast'
+    expect(response).to have_http_status(400)
+    json =  JSON.parse(response.body, symbolize_names: true)
+    expect(json[:data]).to eq([])
+  end
 end
