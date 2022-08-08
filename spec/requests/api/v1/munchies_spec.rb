@@ -16,7 +16,9 @@ describe 'munchies endpoint' do
     expect(attributes).to have_key :forecast
     expect(attributes[:forecast]).to be_a Hash
     expect(attributes[:forecast]).to have_key :summary
+    expect(attributes[:forecast][:summary]).to be_a String
     expect(attributes[:forecast]).to have_key :temperature
+    expect(attributes[:forecast][:temperature]).to be_a Float
     expect(attributes[:forecast]).to_not have_key :datetime
     expect(attributes[:forecast]).to_not have_key :sunrise
     expect(attributes[:forecast]).to_not have_key :sunset
@@ -27,7 +29,9 @@ describe 'munchies endpoint' do
 
     expect(attributes).to have_key :restaurant
     expect(attributes[:restaurant]).to have_key :name
+    expect(attributes[:restaurant][:name]).to be_a String
     expect(attributes[:restaurant]).to have_key :address
+    expect(attributes[:restaurant][:address]).to be_a String
 
     expect(attributes[:restaurant]).to_not have_key :rating
     expect(attributes[:restaurant]).to_not have_key :review_count
