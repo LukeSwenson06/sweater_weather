@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :forecast, only: %i[index]
       resources :users, only: %i[create]
       resources :sessions, only: %i[create]
+      resources :munchies, only: %i[index]
     end
   end
 end
