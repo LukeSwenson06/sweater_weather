@@ -17,6 +17,7 @@ describe 'munchies endpoint' do
     expect(attributes[:forecast]).to be_a Hash
     expect(attributes[:forecast]).to have_key :summary
     expect(attributes[:forecast]).to have_key :temperature
+    
 
     expect(attributes).to have_key :restaurant
 

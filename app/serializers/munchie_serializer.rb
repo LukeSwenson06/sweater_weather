@@ -4,19 +4,17 @@ class MunchieSerializer
       "data": {
         "id": nil,
         "type": "munchie",
-        "attributes": yelp.each do |y|
-          {
-          "destination_city": y.destination,
+        "attributes": {
+          "destination_city": yelp.first.destination,
           "forecast": {
             "summary": forecast[:current_weather].conditions,
             "temperature": forecast[:current_weather].temperature,
           },
-          "restauraunt": {
-            "name": y.name,
-            "address": y.address
+          "restaurant": {
+            "name": yelp.first.name,
+            "address": yelp.first.address
           }
         }
-      end
       }
     }
 
