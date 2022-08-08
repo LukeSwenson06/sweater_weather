@@ -9,6 +9,7 @@ RSpec.describe Yelp do
 
   expect(yelp.name).to eq("Fortune Wok to Table")
   expect(yelp.address).to eq("2817 E 3rd Ave, Denver, CO 80206")
+  expect(yelp.address).to_not eq(["2817 E 3rd Ave", "Denver CO 80206"])
   expect(yelp.destination).to eq("Denver, CO")
   end
 end
