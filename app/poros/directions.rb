@@ -1,4 +1,4 @@
-class Direction
+class Directions
   attr_reader :time,
               :start_city,
               :end_city
