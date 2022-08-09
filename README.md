@@ -53,9 +53,12 @@ Sweater Weather is the final project of Turing Module 3 Backend program. The pur
 
 ## End Points
 #### Retrieve Weather for a City
-`GET /api/v1/forecast?location=denver,Co`
+```
+GET /api/v1/forecast?location=denver,Co
+```
 
-`{
+```
+{
   "data": {
       "id": null,
       "type": "forecast",
@@ -171,19 +174,27 @@ Sweater Weather is the final project of Turing Module 3 Backend program. The pur
           ]
       }
   }
-}`
+}
+```
 
 #### User Registration
-`POST /api/v1/users`
-`{
+```
+POST /api/v1/users
+```
+```
+{
   "email": "therealemail@email.com",
   "password": "12345",
   "password_confirmation": "12345"
-}`
+}
+```
 
 #### Login
-`POST /api/v1/sessions`
-`{
+```
+POST /api/v1/sessions
+```
+```
+    {
     "data": {
         "type": "users",
         "id": 1,
@@ -192,11 +203,14 @@ Sweater Weather is the final project of Turing Module 3 Backend program. The pur
             "api_key": "immanapikey"
         }
     }
-}`
-
+}
+```
 #### Road Trip
-`POST /api/v1/road_trip`
-`{
+```
+POST /api/v1/road_trip
+```
+```
+  {
     "data": {
         "id": null,
         "type": "roadtrip",
@@ -210,6 +224,6 @@ Sweater Weather is the final project of Turing Module 3 Backend program. The pur
             }
         }
     }
-}`
-
+}
+```
 # Thank You
