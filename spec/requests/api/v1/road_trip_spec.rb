@@ -30,10 +30,17 @@ describe 'forecast endpoint' do
 
   end
 
-  # it "responses with a status code 400 and empty array if no location was passed in" do
-  #   get '/api/v1/forecast'
-  #   expect(response).to have_http_status(400)
-  #   json =  JSON.parse(response.body, symbolize_names: true)
-  #   expect(json[:data]).to eq([])
-  # end
+  it "responses with a status code 400 if api key was inputted wrong" do
+    User.create(email: 'therealemail@email.com', password: "12345", password_confirmation: "12345", api_key: "98765" )
+    params = {
+      "origin": "Denver CO",
+      "destination": "Pueblo, CO",
+      "api_key": "immanapikey"
+    }
+    post '/api/v1/road_trip', params: params
+
+    expect(response).to have_http_status(400)
+    error =  JSON.parse(response.body, symbolize_names: true)
+    expect(error[:error]).to eq("Invalid API Key, Please Try Again")
+  end
 end
