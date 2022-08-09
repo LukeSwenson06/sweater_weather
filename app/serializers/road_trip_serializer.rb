@@ -1,7 +1,6 @@
 class RoadTripSerializer
   def self.new(future_forecast, directions)
 
-
     {
       "data": {
         "id": nil,
