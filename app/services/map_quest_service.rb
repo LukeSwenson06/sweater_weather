@@ -6,4 +6,13 @@ class MapQuestService < BaseService
     end
     json_parse(response)
   end
+
+  def self.get_directions_details(origin, destination)
+    response = map_quest.get('/directions/v2/route') do |faraday|
+      faraday.params['from'] = origin
+      faraday.params['to'] = destination
+      faraday.params['key'] = ENV['map_quest_api']
+    end
+    json_parse(response)
+  end
 end

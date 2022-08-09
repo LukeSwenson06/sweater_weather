@@ -10,9 +10,10 @@ RSpec.describe DailyForecast do
     expect(forecast.sunrise).to eq('2022-08-06 06:03:39 -0600')
     expect(forecast.sunset).to eq('2022-08-06 20:08:02 -0600')
     expect(forecast.max_temp).to eq(89.89)
-    expect(forecast.min_temp).to eq(73)
+    expect(forecast.min_temp).to eq(73.00)
     expect(forecast.conditions).to eq("light rain")
     expect(forecast.icon).to eq("10d")
+    expect(forecast.avg_temp).to eq(86.13)
 
   end
 end
