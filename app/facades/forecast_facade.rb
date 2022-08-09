@@ -19,9 +19,9 @@ class ForecastFacade
     hourly_weather = json[:hourly].map do |data|
       HourlyForecast.new(data)
     end
-     timeconversion = time_convert(travel_time)
-     future_forecast = hourly_weather[timeconversion]
-     { conditions: future_forecast.conditions, temperature: future_forecast.temperature }
+      timeconversion = time_convert(travel_time)
+     future_hourly_forecast = hourly_weather[timeconversion]
+     { conditions: future_hourly_forecast.conditions, temperature: future_hourly_forecast.temperature }
   end
 
   def self.time_convert(travel_time)

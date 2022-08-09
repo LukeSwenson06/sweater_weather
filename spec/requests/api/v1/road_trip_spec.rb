@@ -59,7 +59,7 @@ describe 'forecast endpoint' do
 
   end
 
-  xit "responses with impossible route when a route can not be taken by car" do
+  it "responses with impossible route when a route can not be taken by car" do
     User.create(email: 'therealemail@email.com', password: "12345", password_confirmation: "12345", api_key: "immanapikey" )
     params = {
       "origin": "new york city, new york",

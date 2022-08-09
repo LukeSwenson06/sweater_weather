@@ -13,6 +13,7 @@ RSpec.describe DailyForecast do
     expect(forecast.min_temp).to eq(73.00)
     expect(forecast.conditions).to eq("light rain")
     expect(forecast.icon).to eq("10d")
+    expect(forecast.avg_temp).to eq(86.13)
 
   end
 end
